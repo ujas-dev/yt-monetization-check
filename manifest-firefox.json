@@ -1,0 +1,32 @@
+{
+    "name": "Yt Monetization Check",
+    "version": "1.0.0",
+    "description": "This extension will detect that any youtube channel is Monetize or not.",
+    "manifest_version": 2,
+    "author": "Ujas J Dubal",
+    "permissions": [
+        "activeTab",
+        "*://*.youtube.com/*"
+    ],
+    "background": {
+        "scripts": ["ytmc.background.js"]
+    },
+    "icons": {
+        "128": "icon128.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://youtube.com/*",
+                "*://www.youtube.com/*",
+                "*://m.youtube.com/*"
+            ],
+            "exclude_matches": [
+                "*://*.music.youtube.com/*",
+                "*://studio.youtube.com/*"
+            ],
+            "js": ["ytmc.content.js"],
+            "run_at": "document_end"
+        }
+    ]
+}
