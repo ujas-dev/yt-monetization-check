@@ -1,0 +1,1 @@
+# yt-monetization-check
